@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:full_ecommerce_app/core/app/env.variables.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -7,14 +8,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text('Ultra'),),
-      )
+        appBar: AppBar(title: const Text('Ultra'),),
+      ),
     );
   }
 }
