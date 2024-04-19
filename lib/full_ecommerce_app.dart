@@ -4,9 +4,8 @@ import 'package:full_ecommerce_app/core/app/connectivity_controller.dart';
 import 'package:full_ecommerce_app/core/app/env.variables.dart';
 
 import 'package:full_ecommerce_app/core/common/screens/no_network_screen.dart';
-import 'package:full_ecommerce_app/homescreen.dart';
 import 'package:full_ecommerce_app/splash.dart';
-import 'package:full_ecommerce_app/splash_screen_view.dart';
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
