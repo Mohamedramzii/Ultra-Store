@@ -1,5 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:full_ecommerce_app/homescreen.dart';
 import 'package:lottie/lottie.dart';
 
@@ -14,6 +15,6 @@ class Splash extends StatelessWidget {
           child: LottieBuilder.asset('assets/images/splashh.json', repeat: false,),
         ),
       ],
-    ), nextScreen: const HomeScreen(), splashIconSize: 400,);
+    ), nextScreen: const HomeScreen(), splashIconSize: 400.r,);
   }
 }
