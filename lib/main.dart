@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:full_ecommerce_app/core/app/env.variables.dart';
 
 import 'package:full_ecommerce_app/full_ecommerce_app.dart';
+import 'package:full_ecommerce_app/splash.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,6 +28,10 @@ void main() async {
     ]),
     SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
-    ).then((_) => runApp(const MyApp())),
+    ).then(
+      (_) {
+        SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+        runApp(const MyApp());
+      }),
   ]);
 }
