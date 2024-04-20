@@ -1,7 +1,11 @@
+// Dart imports:
 import 'dart:developer';
 
-import 'package:connectivity_plus/connectivity_plus.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:connectivity_plus/connectivity_plus.dart';
 
 class ConnectivityController {
   ConnectivityController._();

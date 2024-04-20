@@ -1,8 +1,13 @@
 // ignore_for_file: lines_longer_than_80_chars
 
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:full_ecommerce_app/core/style/app_images.dart';
+
+// Package imports:
 import 'package:lottie/lottie.dart';
+
+// Project imports:
+import 'package:full_ecommerce_app/core/style/app_images.dart';
 
 class NoInternetScreen extends StatelessWidget {
   const NoInternetScreen({super.key});

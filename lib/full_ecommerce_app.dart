@@ -1,11 +1,15 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// Project imports:
 import 'package:full_ecommerce_app/core/app/connectivity_controller.dart';
 import 'package:full_ecommerce_app/core/app/env.variables.dart';
-
 import 'package:full_ecommerce_app/core/common/screens/no_network_screen.dart';
+import 'package:full_ecommerce_app/core/routes/app_routes.dart';
 import 'package:full_ecommerce_app/splash.dart';
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -36,6 +40,8 @@ class MyApp extends StatelessWidget {
                   ),
                 );
               },
+              onGenerateRoute: AppRoutes.onGenerateRoute,
+              initialRoute: AppRoutes.homescreen,
               home: const Splash(),
             ),
           );
