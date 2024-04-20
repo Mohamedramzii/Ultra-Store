@@ -1,12 +1,16 @@
+// Dart imports:
 import 'dart:io';
 
-import 'package:firebase_core/firebase_core.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+// Package imports:
+import 'package:firebase_core/firebase_core.dart';
+
+// Project imports:
 import 'package:full_ecommerce_app/core/app/env.variables.dart';
-
 import 'package:full_ecommerce_app/full_ecommerce_app.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
