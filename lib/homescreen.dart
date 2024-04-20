@@ -1,4 +1,5 @@
 // Flutter imports:
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
@@ -30,9 +31,23 @@ class HomeScreen extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              context.pushNamed(AppRoutes.testscreen);
+              // context.pushNamed(AppRoutes.testscreen);
+              AdaptiveTheme.of(context).toggleThemeMode();
             },
-            child: const Text('Go to test screen'),
+            child: Text(
+              'Go to test screen',
+              style: TextStyle(),
+            ),
+          ),
+          Switch(
+            value: AdaptiveTheme.of(context).mode.isDark,
+            onChanged: (value) {
+              if (value) {
+                AdaptiveTheme.of(context).setDark();
+              } else {
+                AdaptiveTheme.of(context).setLight();
+              }
+            },
           ),
         ],
       ),
