@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:full_ecommerce_app/core/extensions/color_extension.dart';
 
 extension ContextExtension on BuildContext {
   Future<dynamic> pushNamed(String pageName, {Object? arguments}) {
@@ -19,4 +20,12 @@ extension ContextExtension on BuildContext {
   void pop() {
     return Navigator.pop(this);
   }
+
+
+  //! Colors Theme
+
+  // AppColors color = Theme.of(this).extensions<AppColors>()!;
+
 }
+
+

@@ -1,20 +1,21 @@
 // Flutter imports:
-import 'package:flutter/material.dart';
 
+import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 // Project imports:
 import 'package:full_ecommerce_app/core/app/connectivity_controller.dart';
 import 'package:full_ecommerce_app/core/app/env.variables.dart';
 import 'package:full_ecommerce_app/core/common/screens/no_network_screen.dart';
 import 'package:full_ecommerce_app/core/routes/app_routes.dart';
+import 'package:full_ecommerce_app/core/style/theme/app_theme.dart';
 import 'package:full_ecommerce_app/splash.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({required this.savedThemeMode, super.key});
+  final AdaptiveThemeMode? savedThemeMode;
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
@@ -23,26 +24,29 @@ class MyApp extends StatelessWidget {
         if (value) {
           return ScreenUtilInit(
             designSize: const Size(375, 812),
-            child: MaterialApp(
-              debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
-              title: 'Flutter Demo',
-              theme: ThemeData(
-                colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-                useMaterial3: true,
+            child: AdaptiveTheme(
+              light: lightTheme(),
+              dark: darkTheme(),
+              initial: savedThemeMode ?? AdaptiveThemeMode.system,
+              builder: (theme, darkTheme) => MaterialApp(
+                debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
+                title: 'Flutter Demo',
+                theme: theme,
+                darkTheme: darkTheme,
+                builder: (context, widget) {
+                  return Scaffold(
+                    body: Builder(
+                      builder: (context) {
+                        ConnectivityController.instance.init();
+                        return widget!;
+                      },
+                    ),
+                  );
+                },
+                onGenerateRoute: AppRoutes.onGenerateRoute,
+                initialRoute: AppRoutes.homescreen,
+                home: const Splash(),
               ),
-              builder: (context, widget) {
-                return Scaffold(
-                  body: Builder(
-                    builder: (context) {
-                      ConnectivityController.instance.init();
-                      return widget!;
-                    },
-                  ),
-                );
-              },
-              onGenerateRoute: AppRoutes.onGenerateRoute,
-              initialRoute: AppRoutes.homescreen,
-              home: const Splash(),
             ),
           );
         } else {

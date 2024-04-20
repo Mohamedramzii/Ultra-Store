@@ -1,20 +1,19 @@
 // Dart imports:
 import 'dart:io';
 
+// Package imports:
+import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-// Package imports:
-import 'package:firebase_core/firebase_core.dart';
-
 // Project imports:
 import 'package:full_ecommerce_app/core/app/env.variables.dart';
 import 'package:full_ecommerce_app/full_ecommerce_app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  final savedThemeMode = await AdaptiveTheme.getThemeMode();
   await Future.wait([
     EnvVariable.instance.init(envType: EnvTypeEnum.dev),
     Future.wait([
@@ -35,7 +34,8 @@ void main() async {
     ).then(
       (_) {
         SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
-        runApp(const MyApp());
+        
+        runApp( MyApp(savedThemeMode: savedThemeMode));
       }),
   ]);
 }
