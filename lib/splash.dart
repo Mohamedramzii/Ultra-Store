@@ -2,7 +2,6 @@
 // Package imports:
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 // Project imports:
 import 'package:full_ecommerce_app/homescreen.dart';
