@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 // Project imports:
-import 'package:full_ecommerce_app/core/style/app_images.dart';
+import 'package:full_ecommerce_app/core/style/images/app_images.dart';
 
 class NoInternetScreen extends StatelessWidget {
   const NoInternetScreen({super.key});

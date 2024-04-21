@@ -21,10 +21,10 @@ class AppColors extends ThemeExtension<AppColors> {
     return AppColors(kprimaryColor: kprimaryColor);
   }
 
-  static const AppColors darkColors = AppColors(
-    kprimaryColor: DarkColors.kprimaryColor,
-  );
-  static const AppColors lightColors = AppColors(
-    kprimaryColor: LightColors.kprimaryColor,
-  );
+  // static const AppColors darkColors = AppColors(
+  //   kprimaryColor: DarkColors.kprimaryColor,
+  // );
+  // static const AppColors lightColors = AppColors(
+  //   kprimaryColor: LightColors.kprimaryColor,
+  // );
 }

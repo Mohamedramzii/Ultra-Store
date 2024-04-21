@@ -10,6 +10,7 @@ import 'package:full_ecommerce_app/core/app/env.variables.dart';
 import 'package:full_ecommerce_app/core/common/screens/no_network_screen.dart';
 import 'package:full_ecommerce_app/core/routes/app_routes.dart';
 import 'package:full_ecommerce_app/core/style/theme/app_theme.dart';
+import 'package:full_ecommerce_app/language/app_localizations_setup.dart';
 import 'package:full_ecommerce_app/splash.dart';
 
 class MyApp extends StatelessWidget {
@@ -34,17 +35,26 @@ class MyApp extends StatelessWidget {
                 theme: theme,
                 darkTheme: darkTheme,
                 builder: (context, widget) {
-                  return Scaffold(
-                    body: Builder(
-                      builder: (context) {
-                        ConnectivityController.instance.init();
-                        return widget!;
-                      },
+                  return GestureDetector(
+                    onTap: () => FocusManager.instance.primaryFocus?.unfocus() ,
+                    child: Scaffold(
+                      body: Builder(
+                        builder: (context) {
+                          ConnectivityController.instance.init();
+                          return widget!;
+                        },
+                      ),
                     ),
                   );
                 },
                 onGenerateRoute: AppRoutes.onGenerateRoute,
                 initialRoute: AppRoutes.homescreen,
+                locale:  const Locale('en'),
+                supportedLocales: AppLocalizationsSetup.supportedLocales,
+                localeResolutionCallback:
+                    AppLocalizationsSetup.localeResolutionCallback,
+                localizationsDelegates:
+                    AppLocalizationsSetup.localizationsDelegates,
                 home: const Splash(),
               ),
             ),

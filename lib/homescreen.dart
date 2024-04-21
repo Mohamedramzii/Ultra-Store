@@ -5,10 +5,11 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:full_ecommerce_app/core/extensions/context_extensions.dart';
-import 'package:full_ecommerce_app/core/routes/app_routes.dart';
+
 
 // Project imports:
 import 'package:full_ecommerce_app/core/style/fonts/app_font_family.dart';
+import 'package:full_ecommerce_app/language/lang_keys.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,7 +21,7 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         children: [
           Text(
-            'Some Data',
+            context.translate(LangKeys.appName),
             style: TextStyle(
                 fontSize: 25.sp, fontFamily: FontFamilys.englishFontPoppins),
           ),

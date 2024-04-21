@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:full_ecommerce_app/core/extensions/color_extension.dart';
+import 'package:full_ecommerce_app/language/app_localizations.dart';
+
 
 extension ContextExtension on BuildContext {
+
+ String translate(String langKey){
+  return AppLocalizations.of(this)!.translate(langKey).toString();
+ }
+
+
+
   Future<dynamic> pushNamed(String pageName, {Object? arguments}) {
     return Navigator.of(this).pushNamed(pageName, arguments: arguments);
   }
@@ -27,5 +35,3 @@ extension ContextExtension on BuildContext {
   // AppColors color = Theme.of(this).extensions<AppColors>()!;
 
 }
-
-

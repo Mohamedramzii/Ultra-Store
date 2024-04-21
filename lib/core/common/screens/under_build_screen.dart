@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:full_ecommerce_app/core/style/app_images.dart';
+import 'package:full_ecommerce_app/core/style/images/app_images.dart';
 
 class PageUnderBuildScreen extends StatelessWidget {
   const PageUnderBuildScreen({super.key});
