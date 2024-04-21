@@ -13,6 +13,7 @@ import 'package:full_ecommerce_app/full_ecommerce_app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
   final savedThemeMode = await AdaptiveTheme.getThemeMode();
   await Future.wait([
     EnvVariable.instance.init(envType: EnvTypeEnum.dev),
@@ -31,11 +32,10 @@ void main() async {
     ]),
     SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
-    ).then(
-      (_) {
-        SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
-        
-        runApp( MyApp(savedThemeMode: savedThemeMode));
-      }),
+    ).then((_) {
+      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+
+      runApp(MyApp(savedThemeMode: savedThemeMode));
+    }),
   ]);
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:full_ecommerce_app/core/style/colors/dark_colors.dart';
-import 'package:full_ecommerce_app/core/style/colors/light_colors.dart';
+
 
 class AppColors extends ThemeExtension<AppColors> {
   const AppColors({required this.kprimaryColor});
@@ -27,4 +26,6 @@ class AppColors extends ThemeExtension<AppColors> {
   // static const AppColors lightColors = AppColors(
   //   kprimaryColor: LightColors.kprimaryColor,
   // );
+
+  
 }

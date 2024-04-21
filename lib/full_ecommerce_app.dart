@@ -25,9 +25,12 @@ class MyApp extends StatelessWidget {
         if (value) {
           return ScreenUtilInit(
             designSize: const Size(375, 812),
-            child: AdaptiveTheme(
+            minTextAdapt: true,
+            splitScreenMode: true,
+            builder: (context, child) => AdaptiveTheme(
               light: lightTheme(),
               dark: darkTheme(),
+              debugShowFloatingThemeButton: true,
               initial: savedThemeMode ?? AdaptiveThemeMode.system,
               builder: (theme, darkTheme) => MaterialApp(
                 debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
@@ -36,7 +39,7 @@ class MyApp extends StatelessWidget {
                 darkTheme: darkTheme,
                 builder: (context, widget) {
                   return GestureDetector(
-                    onTap: () => FocusManager.instance.primaryFocus?.unfocus() ,
+                    onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
                     child: Scaffold(
                       body: Builder(
                         builder: (context) {
@@ -48,14 +51,14 @@ class MyApp extends StatelessWidget {
                   );
                 },
                 onGenerateRoute: AppRoutes.onGenerateRoute,
-                initialRoute: AppRoutes.homescreen,
-                locale:  const Locale('en'),
+                initialRoute: AppRoutes.splasScreen,
+                locale: const Locale('en'),
                 supportedLocales: AppLocalizationsSetup.supportedLocales,
                 localeResolutionCallback:
                     AppLocalizationsSetup.localeResolutionCallback,
                 localizationsDelegates:
                     AppLocalizationsSetup.localizationsDelegates,
-                home: const Splash(),
+                // home: const Splash(),
               ),
             ),
           );

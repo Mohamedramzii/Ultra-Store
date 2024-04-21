@@ -22,13 +22,12 @@ class HomeScreen extends StatelessWidget {
         children: [
           Text(
             context.translate(LangKeys.appName),
-            style: TextStyle(
-                fontSize: 25.sp, fontFamily: FontFamilys.englishFontPoppins),
+            style: Theme.of(context).textTheme.displaySmall,
           ),
           Text(
             'بعض البيانات',
             style: TextStyle(
-                fontSize: 25.sp, fontFamily: FontFamilys.arabicFontCairo),
+                fontSize: 25.sp, fontFamily: FontFamily.arabicFontCairo),
           ),
           TextButton(
             onPressed: () {
