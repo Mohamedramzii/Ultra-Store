@@ -1,6 +1,10 @@
+// Flutter imports:
 import 'package:flutter/cupertino.dart';
+
+// Package imports:
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+// Project imports:
 import 'package:full_ecommerce_app/language/app_localizations.dart';
 
 class AppLocalizationsSetup {

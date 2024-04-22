@@ -1,5 +1,7 @@
-
+// Flutter imports:
 import 'package:flutter/material.dart' show Locale, LocalizationsDelegate;
+
+// Project imports:
 import 'package:full_ecommerce_app/language/app_localizations.dart';
 
 // Defining a custom LocalizationsDelegate for AppLocalizations.

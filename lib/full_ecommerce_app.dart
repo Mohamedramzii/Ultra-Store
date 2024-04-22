@@ -1,9 +1,12 @@
 // Flutter imports:
 
-import 'package:adaptive_theme/adaptive_theme.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
 // Package imports:
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 // Project imports:
 import 'package:full_ecommerce_app/core/app/connectivity_controller.dart';
 import 'package:full_ecommerce_app/core/app/env.variables.dart';
@@ -11,7 +14,6 @@ import 'package:full_ecommerce_app/core/common/screens/no_network_screen.dart';
 import 'package:full_ecommerce_app/core/routes/app_routes.dart';
 import 'package:full_ecommerce_app/core/style/theme/app_theme.dart';
 import 'package:full_ecommerce_app/language/app_localizations_setup.dart';
-import 'package:full_ecommerce_app/splash.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({required this.savedThemeMode, super.key});
