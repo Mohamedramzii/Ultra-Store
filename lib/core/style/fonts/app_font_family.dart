@@ -7,7 +7,7 @@ class FontFamily {
   static const String englishFontPoppins = 'Poppins';
 
   static String getLocalizedFontFamily() {
-    final currentLanguage = 'ar';
+    const currentLanguage = 'ar';
     if (currentLanguage == 'ar') {
       return arabicFontCairo;
     } else {

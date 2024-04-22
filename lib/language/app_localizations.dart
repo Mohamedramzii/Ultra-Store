@@ -1,7 +1,11 @@
+// Dart imports:
 import 'dart:convert' show json;
 
+// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+// Project imports:
 import 'package:full_ecommerce_app/language/app_localizations_delegate.dart';
 
 class AppLocalizations {

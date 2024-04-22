@@ -1,5 +1,5 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-
 
 class AppColors extends ThemeExtension<AppColors> {
   const AppColors({required this.kprimaryColor});

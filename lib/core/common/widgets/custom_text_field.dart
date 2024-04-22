@@ -1,6 +1,11 @@
-import 'package:adaptive_theme/adaptive_theme.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// Project imports:
 import 'package:full_ecommerce_app/core/extensions/context_extensions.dart';
 import 'package:full_ecommerce_app/core/style/colors/dark_colors.dart';
 import 'package:full_ecommerce_app/core/style/colors/light_colors.dart';
@@ -43,15 +48,15 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var themeMode = AdaptiveTheme.of(context).mode;
     return TextFormField(
       controller: controller,
       cursorColor:
-          themeMode.isLight ? LightColors.textColor : DarkColors.textColor,
+          context.isLightMode ? LightColors.textColor : DarkColors.textColor,
       style: TextStyle(
-        fontSize: 16.sp,
+        fontSize: 17.sp,
         fontWeight: FontWeight.w500,
-        color: themeMode.isLight ? LightColors.textColor : DarkColors.textColor,
+        color:
+            context.isLightMode ? LightColors.textColor : DarkColors.textColor,
       ),
       validator: (value) {
         return validator!(value);
@@ -63,40 +68,39 @@ class CustomTextField extends StatelessWidget {
       readOnly: readOnly,
       decoration: InputDecoration(
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(15.r),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(15.r),
           borderSide: BorderSide(
-            color: themeMode.isLight
+            color: context.isLightMode
                 ? LightColors.textFormBorder
                 : DarkColors.textFormBorder,
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(15.r),
           borderSide: BorderSide(
-            color: themeMode.isLight
+            color: context.isLightMode
                 ? LightColors.textFormBorder
                 : DarkColors.textFormBorder,
           ),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(15.r),
           borderSide: const BorderSide(color: Colors.red),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(15.r),
           borderSide: const BorderSide(color: Colors.red),
         ),
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         filled: filled,
         fillColor: fillColour,
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
         hintText: hintText,
-        hintStyle: hintStyle ?? Theme.of(context).textTheme.displaySmall,
+        hintStyle: hintStyle ?? Theme.of(context).textTheme.headlineSmall,
         errorStyle: Theme.of(context).textTheme.displaySmall,
       ),
     );

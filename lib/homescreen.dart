@@ -1,13 +1,12 @@
 // Flutter imports:
-import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:full_ecommerce_app/core/extensions/context_extensions.dart';
-
 
 // Project imports:
+import 'package:full_ecommerce_app/core/extensions/context_extensions.dart';
 import 'package:full_ecommerce_app/core/style/fonts/app_font_family.dart';
 import 'package:full_ecommerce_app/language/lang_keys.dart';
 
