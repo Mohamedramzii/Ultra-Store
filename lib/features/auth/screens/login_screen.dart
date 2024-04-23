@@ -18,6 +18,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
+      resizeToAvoidBottomInset: true,
       bottomNavigationBar: CustomPaint(
         size: Size(
           MediaQuery.of(context).size.width,

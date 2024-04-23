@@ -10,6 +10,7 @@ import 'package:full_ecommerce_app/features/auth/widgets/login/create_account_bu
 import 'package:full_ecommerce_app/features/auth/widgets/login/login_button.dart';
 import 'package:full_ecommerce_app/features/auth/widgets/login/text_form_field_widget.dart';
 import 'package:full_ecommerce_app/features/auth/widgets/theme_lang_buttons.dart';
+import 'package:full_ecommerce_app/language/lang_keys.dart';
 
 class LoginBody extends StatelessWidget {
   const LoginBody({super.key});
@@ -28,10 +29,13 @@ class LoginBody extends StatelessWidget {
             const ThemeAndLanguageButtons(),
             SizedBox(height: 50.h),
             // the upper welcome message
-            const AuthHeaderTextWidget(),
+            const AuthHeaderTextWidget(
+              upperText: LangKeys.login,
+              lowerText: LangKeys.welcome,
+            ),
             SizedBox(height: 20.h),
             // Text Form Fields
-            const TextFormFieldWidget(),
+            const LoginTextFormFieldWidget(),
             SizedBox(height: 20.h),
 
             // Login Button
