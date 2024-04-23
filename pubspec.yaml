@@ -50,6 +50,8 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   animate_do: ^3.3.4
+  flutter_bloc: ^8.1.5
+  shared_preferences: ^2.2.3
   
   
   
@@ -98,6 +100,7 @@ flutter:
     - .env.dev
     - .env.production
     - assets/images/
+    - assets/images/customer/
     - lang/en.json
     - lang/ar.json
 

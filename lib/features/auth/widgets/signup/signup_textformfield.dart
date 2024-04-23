@@ -12,23 +12,38 @@ import 'package:full_ecommerce_app/core/style/colors/light_colors.dart';
 import 'package:full_ecommerce_app/core/utils/app_regex.dart';
 import 'package:full_ecommerce_app/language/lang_keys.dart';
 
-class LoginTextFormFieldWidget extends StatefulWidget {
-  const LoginTextFormFieldWidget({super.key});
+class SignUpTextFormFieldWidget extends StatefulWidget {
+  const SignUpTextFormFieldWidget({super.key});
 
   @override
-  State<LoginTextFormFieldWidget> createState() => _LoginTextFormFieldWidgetState();
+  State<SignUpTextFormFieldWidget> createState() =>
+      _SignUpTextFormFieldWidgetState();
 }
 
-class _LoginTextFormFieldWidgetState extends State<LoginTextFormFieldWidget> {
-
-  bool isVisible=true;
+class _SignUpTextFormFieldWidgetState extends State<SignUpTextFormFieldWidget> {
+  bool isVisible = true;
   @override
   Widget build(BuildContext context) {
     return Form(
         child: FadeInRight(
-           duration: const Duration(milliseconds: animationDuration),
-          child: Column(
-                children: [
+      duration: const Duration(milliseconds: animationDuration),
+      child: Column(
+        children: [
+          //! Full name
+          CustomTextField(
+            controller: TextEditingController(),
+            hintText: context.translate(LangKeys.fullName),
+            keyboardType: TextInputType.text,
+            validator: (value) {
+              if (value!.length <= 1 || value.isEmpty) {
+                return context.translate(LangKeys.validName);
+              } else {
+                return null;
+              }
+            },
+          ),
+          SizedBox(height: 20.h),
+
           //! Email address
           CustomTextField(
             controller: TextEditingController(),
@@ -42,8 +57,8 @@ class _LoginTextFormFieldWidgetState extends State<LoginTextFormFieldWidget> {
               }
             },
           ),
-           SizedBox(height: 20.h),
-          
+          SizedBox(height: 20.h),
+
           //! password
           CustomTextField(
             controller: TextEditingController(),
@@ -53,7 +68,7 @@ class _LoginTextFormFieldWidgetState extends State<LoginTextFormFieldWidget> {
             suffixIcon: IconButton(
               onPressed: () {
                 setState(() {
-                  isVisible=!isVisible;
+                  isVisible = !isVisible;
                 });
               },
               icon: Icon(
@@ -70,8 +85,8 @@ class _LoginTextFormFieldWidgetState extends State<LoginTextFormFieldWidget> {
               return null;
             },
           ),
-                ],
-              ),
-        ));
+        ],
+      ),
+    ));
   }
 }
