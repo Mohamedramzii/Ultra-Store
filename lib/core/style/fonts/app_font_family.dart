@@ -1,3 +1,6 @@
+import 'package:full_ecommerce_app/core/services/shared_keys.dart';
+import 'package:full_ecommerce_app/core/services/shared_pref.dart';
+
 class FontFamily {
   FontFamily._();
 
@@ -7,7 +10,7 @@ class FontFamily {
   static const String englishFontPoppins = 'Poppins';
 
   static String getLocalizedFontFamily() {
-    const currentLanguage = 'ar';
+    final currentLanguage = SharedPref().getString(SharedKeys.languageKey);
     if (currentLanguage == 'ar') {
       return arabicFontCairo;
     } else {

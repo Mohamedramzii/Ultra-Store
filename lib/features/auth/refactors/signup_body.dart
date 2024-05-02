@@ -37,7 +37,7 @@ class SignupBody extends StatelessWidget {
             // button
             const SignUpButton(),
             // already have an account text
-            const HaveAnAccountText()
+            const HaveAnAccountText(),
           ],
         ),
       ),
