@@ -1,15 +1,17 @@
 // Flutter imports:
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:animate_do/animate_do.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:full_ecommerce_app/core/app/app_cubit/app_cubit_cubit.dart';
+import 'package:full_ecommerce_app/core/common/animations/custom_direction_animation.dart';
 
 // Project imports:
 import 'package:full_ecommerce_app/core/common/widgets/custom_linear_button.dart';
-import 'package:full_ecommerce_app/core/constants/app_constants.dart';
 import 'package:full_ecommerce_app/core/extensions/context_extensions.dart';
+import 'package:full_ecommerce_app/language/app_localizations.dart';
 import 'package:full_ecommerce_app/language/lang_keys.dart';
 
 class ThemeAndLanguageButtons extends StatelessWidget {
@@ -22,8 +24,7 @@ class ThemeAndLanguageButtons extends StatelessWidget {
       children: [
         //* theme mode
 
-        FadeInRight(
-          duration: const Duration(milliseconds: animationDuration),
+        CustomFadeInAnimation(
           child: CustomLinearButton(
             onPressed: () {
               // AdaptiveTheme.of(context).toggleThemeMode();
@@ -38,16 +39,25 @@ class ThemeAndLanguageButtons extends StatelessWidget {
           ),
         ),
         //* Languages mode
-        FadeInLeft(
-          duration: const Duration(milliseconds: animationDuration),
-          child: CustomLinearButton(
-            onPressed: () {},
-            width: 100.w,
-            child: Text(
-              context.translate(LangKeys.langCode),
-              style: context.textStyle.displaySmall,
-            ),
-          ),
+        BlocBuilder<AppCubit, AppCubitState>(
+          builder: (context, state) {
+            return CustomFadeInAnimation(
+              child: CustomLinearButton(
+                onPressed: () {
+                  if (AppLocalizations.of(context)!.isEnLocale) {
+                    context.read<AppCubit>().changeLanuageToArabic();
+                  } else {
+                    context.read<AppCubit>().changeLanuageToEnglish();
+                  }
+                },
+                width: 100.w,
+                child: Text(
+                  context.translate(LangKeys.langCode),
+                  style: context.textStyle.displaySmall,
+                ),
+              ),
+            );
+          },
         ),
       ],
     );

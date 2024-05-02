@@ -3,6 +3,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:full_ecommerce_app/core/common/animations/custom_direction_animation.dart';
 // Project imports:
 import 'package:full_ecommerce_app/core/common/widgets/custom_text_field.dart';
 import 'package:full_ecommerce_app/core/constants/app_constants.dart';
@@ -25,8 +26,7 @@ class _SignUpTextFormFieldWidgetState extends State<SignUpTextFormFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return Form(
-        child: FadeInRight(
-      duration: const Duration(milliseconds: animationDuration),
+        child: CustomFadeInAnimation(
       child: Column(
         children: [
           //! Full name

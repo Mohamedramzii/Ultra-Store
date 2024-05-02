@@ -3,6 +3,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:full_ecommerce_app/core/common/animations/custom_direction_animation.dart';
 // Project imports:
 import 'package:full_ecommerce_app/core/common/widgets/custom_text_field.dart';
 import 'package:full_ecommerce_app/core/constants/app_constants.dart';
@@ -16,19 +17,18 @@ class LoginTextFormFieldWidget extends StatefulWidget {
   const LoginTextFormFieldWidget({super.key});
 
   @override
-  State<LoginTextFormFieldWidget> createState() => _LoginTextFormFieldWidgetState();
+  State<LoginTextFormFieldWidget> createState() =>
+      _LoginTextFormFieldWidgetState();
 }
 
 class _LoginTextFormFieldWidgetState extends State<LoginTextFormFieldWidget> {
-
-  bool isVisible=true;
+  bool isVisible = true;
   @override
   Widget build(BuildContext context) {
     return Form(
-        child: FadeInRight(
-           duration: const Duration(milliseconds: animationDuration),
-          child: Column(
-                children: [
+        child: CustomFadeInAnimation(
+      child: Column(
+        children: [
           //! Email address
           CustomTextField(
             controller: TextEditingController(),
@@ -42,8 +42,8 @@ class _LoginTextFormFieldWidgetState extends State<LoginTextFormFieldWidget> {
               }
             },
           ),
-           SizedBox(height: 20.h),
-          
+          SizedBox(height: 20.h),
+
           //! password
           CustomTextField(
             controller: TextEditingController(),
@@ -53,7 +53,7 @@ class _LoginTextFormFieldWidgetState extends State<LoginTextFormFieldWidget> {
             suffixIcon: IconButton(
               onPressed: () {
                 setState(() {
-                  isVisible=!isVisible;
+                  isVisible = !isVisible;
                 });
               },
               icon: Icon(
@@ -70,8 +70,8 @@ class _LoginTextFormFieldWidgetState extends State<LoginTextFormFieldWidget> {
               return null;
             },
           ),
-                ],
-              ),
-        ));
+        ],
+      ),
+    ));
   }
 }

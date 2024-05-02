@@ -8,17 +8,25 @@ import 'package:flutter/services.dart';
 // Package imports:
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:full_ecommerce_app/core/app/bloc_observer.dart';
 
 // Project imports:
 import 'package:full_ecommerce_app/core/app/env.variables.dart';
+import 'package:full_ecommerce_app/core/services/shared_pref.dart';
+import 'package:full_ecommerce_app/di/injection_container.dart';
 import 'package:full_ecommerce_app/full_ecommerce_app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+  Bloc.observer = AppBlocObserver();
+
   final savedThemeMode = await AdaptiveTheme.getThemeMode();
   await Future.wait([
+    // Environments
     EnvVariable.instance.init(envType: EnvTypeEnum.dev),
+
+    // Firebase
     Future.wait([
       if (Platform.isAndroid)
         Firebase.initializeApp(
@@ -32,6 +40,14 @@ void main() async {
       else
         Firebase.initializeApp(),
     ]),
+
+    // Shared Preferences
+    SharedPref().init(),
+
+    // dependency injection
+    initDI(),
+
+    // Orientation
     SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
     ).then((_) {

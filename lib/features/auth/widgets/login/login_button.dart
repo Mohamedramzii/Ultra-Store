@@ -2,12 +2,13 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:animate_do/animate_do.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:full_ecommerce_app/core/common/animations/custom_direction_animation.dart';
 
 // Project imports:
 import 'package:full_ecommerce_app/core/common/widgets/custom_linear_button.dart';
-import 'package:full_ecommerce_app/core/constants/app_constants.dart';
+
 import 'package:full_ecommerce_app/core/extensions/context_extensions.dart';
 import 'package:full_ecommerce_app/language/lang_keys.dart';
 
@@ -16,8 +17,7 @@ class LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeInUp(
-      duration: const Duration(milliseconds: animationDuration),
+    return CustomFadeInUp(
       child: CustomLinearButton(
         onPressed: () {},
         width: double.infinity,
