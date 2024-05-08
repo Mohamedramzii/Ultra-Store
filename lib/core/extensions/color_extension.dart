@@ -26,6 +26,4 @@ class AppColors extends ThemeExtension<AppColors> {
   // static const AppColors lightColors = AppColors(
   //   kprimaryColor: LightColors.kprimaryColor,
   // );
-
-  
 }

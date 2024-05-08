@@ -20,22 +20,4 @@ class EnvVariable {
     }
     _envType = dotenv.get('ENV_TYPE');
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 }

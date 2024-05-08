@@ -10,8 +10,7 @@ class DarkColors {
   static const Color _black1 = Color(0xff353F54);
   static const Color _black2 = Color(0xff222834);
 
-
- //! Dark theme Colors
+  //! Dark theme Colors
   static const mainColor = DarkColors._mainColor;
   static const bluePinkDark = DarkColors._blueDark;
   static const bluePinkLight = DarkColors._blueLight;

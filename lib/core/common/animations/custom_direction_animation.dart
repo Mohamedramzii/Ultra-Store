@@ -2,8 +2,8 @@ import 'package:animate_do/animate_do.dart';
 
 import 'package:flutter/material.dart';
 import 'package:full_ecommerce_app/core/constants/app_constants.dart';
-import 'package:full_ecommerce_app/core/services/shared_keys.dart';
-import 'package:full_ecommerce_app/core/services/shared_pref.dart';
+import 'package:full_ecommerce_app/core/services/local/shared_keys.dart';
+import 'package:full_ecommerce_app/core/services/local/shared_pref.dart';
 
 class CustomFadeInDown extends StatelessWidget {
   const CustomFadeInDown({

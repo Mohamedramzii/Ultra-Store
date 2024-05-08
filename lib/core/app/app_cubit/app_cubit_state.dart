@@ -1,10 +1,9 @@
-part of 'app_cubit_cubit.dart';
+part of 'app_cubit.dart';
 
 @immutable
 sealed class AppCubitState {}
 
 final class AppInitial extends AppCubitState {}
-
 
 //! Theme Mode State
 final class AppThemeChanged extends AppCubitState {
@@ -19,3 +18,13 @@ final class AppLanguageChanged extends AppCubitState {
 
   final Locale locale;
 }
+
+//! Image Picker State
+
+final class ImageChangedsuccessfully extends AppCubitState {}
+
+final class ImageUploadedSuccessfully extends AppCubitState {}
+
+final class ImageUploadedLoadingState extends AppCubitState {}
+
+final class ImageUploadedFailureState extends AppCubitState {}
