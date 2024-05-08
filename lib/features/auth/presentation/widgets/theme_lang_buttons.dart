@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:full_ecommerce_app/core/app/app_cubit/app_cubit_cubit.dart';
+import 'package:full_ecommerce_app/core/app/app_cubit/app_cubit.dart';
 import 'package:full_ecommerce_app/core/common/animations/custom_direction_animation.dart';
 
 // Project imports:

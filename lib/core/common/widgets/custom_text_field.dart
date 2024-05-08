@@ -101,7 +101,8 @@ class CustomTextField extends StatelessWidget {
         prefixIcon: prefixIcon,
         hintText: hintText,
         hintStyle: hintStyle ?? Theme.of(context).textTheme.headlineSmall,
-        errorStyle: Theme.of(context).textTheme.displaySmall,
+        errorStyle:
+            Theme.of(context).textTheme.displaySmall!.copyWith(fontSize: 10.sp),
       ),
     );
   }

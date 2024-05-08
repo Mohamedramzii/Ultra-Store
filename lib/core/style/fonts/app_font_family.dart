@@ -1,5 +1,5 @@
-import 'package:full_ecommerce_app/core/services/shared_keys.dart';
-import 'package:full_ecommerce_app/core/services/shared_pref.dart';
+import 'package:full_ecommerce_app/core/services/local/shared_keys.dart';
+import 'package:full_ecommerce_app/core/services/local/shared_pref.dart';
 
 class FontFamily {
   FontFamily._();

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:full_ecommerce_app/core/common/widgets/custom_linear_button.dart';
-import 'package:full_ecommerce_app/core/extensions/context_extensions.dart';
-import 'package:full_ecommerce_app/features/auth/widgets/auth_header_text.dart';
-import 'package:full_ecommerce_app/features/auth/widgets/signup/have_an_account_text.dart';
-import 'package:full_ecommerce_app/features/auth/widgets/signup/signup_button.dart';
-import 'package:full_ecommerce_app/features/auth/widgets/signup/signup_textformfield.dart';
-import 'package:full_ecommerce_app/features/auth/widgets/signup/user_avatar_image.dart';
-import 'package:full_ecommerce_app/features/auth/widgets/theme_lang_buttons.dart';
+import 'package:full_ecommerce_app/features/auth/presentation/widgets/auth_header_text.dart';
+import 'package:full_ecommerce_app/features/auth/presentation/widgets/signup/have_an_account_text.dart';
+import 'package:full_ecommerce_app/features/auth/presentation/widgets/signup/signup_button.dart';
+import 'package:full_ecommerce_app/features/auth/presentation/widgets/signup/signup_textformfield.dart';
+import 'package:full_ecommerce_app/features/auth/presentation/widgets/signup/user_avatar_image.dart';
+import 'package:full_ecommerce_app/features/auth/presentation/widgets/theme_lang_buttons.dart';
+
 import 'package:full_ecommerce_app/language/lang_keys.dart';
 
 class SignupBody extends StatelessWidget {
