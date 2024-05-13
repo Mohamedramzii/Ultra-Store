@@ -16,4 +16,4 @@
 ## Screenshots and other features will be uploaded SOON!
 
 
-[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)]([https://youtu.be/vt5fpE0bzSY](https://drive.google.com/file/d/1caBUc2g26Zr7nCsupwqwTy_BDiL-YxFa/view?usp=drive_link))
+[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)]((https://drive.google.com/file/d/1caBUc2g26Zr7nCsupwqwTy_BDiL-YxFa/view?usp=drive_link))
