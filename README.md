@@ -16,4 +16,4 @@
 ## Screenshots and other features will be uploaded SOON!
 
 
-[![Watch the video]](https://drive.google.com/file/d/1caBUc2g26Zr7nCsupwqwTy_BDiL-YxFa/view?usp=drive_link)
+#### For a demo for what implemented till now --> [![Watch the video]](https://drive.google.com/file/d/1caBUc2g26Zr7nCsupwqwTy_BDiL-YxFa/view?usp=drive_link)
