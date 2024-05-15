@@ -16,6 +16,7 @@ final class UserLoginFailureState extends AuthCubitState {
   });
   final String errorMessage;
 }
+
 //* Register States
 final class UserRegisterSuccessState extends AuthCubitState {}
 
@@ -44,13 +45,12 @@ final class GetUserInformationFailureState extends AuthCubitState {
   final String errorMessage;
 }
 
-
 //! Image Picker State
 
 final class ImageChangedsuccessfully extends AuthCubitState {}
 
 final class ImageUploadedSuccessfully extends AuthCubitState {}
 
-final class ImageUploadedLoadingState extends AuthCubitState {}
+final class UserImageUploadedLoadingState extends AuthCubitState {}
 
 final class ImageUploadedFailureState extends AuthCubitState {}

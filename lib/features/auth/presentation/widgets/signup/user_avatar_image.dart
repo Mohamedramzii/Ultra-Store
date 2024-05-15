@@ -2,10 +2,11 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:full_ecommerce_app/core/app/app_cubit/app_cubit.dart';
+
 import 'package:full_ecommerce_app/core/constants/app_constants.dart';
 import 'package:full_ecommerce_app/core/extensions/context_extensions.dart';
 import 'package:full_ecommerce_app/core/style/images/app_images.dart';
+import 'package:full_ecommerce_app/features/auth/presentation/bloc/auth_cubit/auth_cubit.dart';
 import 'package:full_ecommerce_app/language/lang_keys.dart';
 
 class UserAvatarImage extends StatelessWidget {
@@ -13,7 +14,7 @@ class UserAvatarImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AppCubit, AppCubitState>(
+    return BlocBuilder<AuthCubit, AuthCubitState>(
       builder: (context, state) {
         return FadeInDownBig(
           duration: const Duration(milliseconds: animationDuration),
@@ -24,10 +25,10 @@ class UserAvatarImage extends StatelessWidget {
                 width: 100.w,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(50.w),
-                  child: BlocProvider.of<AppCubit>(context).image == null
+                  child: BlocProvider.of<AuthCubit>(context).image == null
                       ? GestureDetector(
-                          onTap: () =>
-                              BlocProvider.of<AppCubit>(context).uploadImage(),
+                          onTap: () => BlocProvider.of<AuthCubit>(context)
+                              .pickUserImage(),
                           child: Stack(
                             children: [
                               Image.asset(
@@ -46,7 +47,7 @@ class UserAvatarImage extends StatelessWidget {
                           ),
                         )
                       : Image.file(
-                          BlocProvider.of<AppCubit>(context).image!,
+                          BlocProvider.of<AuthCubit>(context).image!,
                           width: 100.w,
                           fit: BoxFit.cover,
                         ),
@@ -55,7 +56,7 @@ class UserAvatarImage extends StatelessWidget {
               SizedBox(
                 height: 10.h,
               ),
-              if (context.read<AppCubit>().image == null)
+              if (context.read<AuthCubit>().image == null)
                 Text(
                   '${context.translate(LangKeys.addPhoto)}*',
                   style: Theme.of(context)

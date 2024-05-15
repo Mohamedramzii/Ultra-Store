@@ -35,10 +35,11 @@ class MyApp extends StatelessWidget {
               minTextAdapt: true,
               splitScreenMode: true,
               builder: (context, child) => AdaptiveTheme(
+                debugShowFloatingThemeButton: true,
                 light: lightTheme(),
                 dark: darkTheme(),
                 // debugShowFloatingThemeButton: true,
-                initial: savedThemeMode ?? AdaptiveThemeMode.system,
+                initial: savedThemeMode ?? AdaptiveThemeMode.dark,
                 builder: (lightTheme, darkTheme) =>
                     BlocBuilder<AppCubit, AppCubitState>(
                   buildWhen: (previous, current) => previous != current,
@@ -67,11 +68,11 @@ class MyApp extends StatelessWidget {
                       navigatorKey: getIt<GlobalKey<NavigatorState>>(),
                       onGenerateRoute: AppRoutes.onGenerateRoute,
                       initialRoute:
-                          SharedPref().getString(SharedKeys.tokenKey) == null
+                          SharedPref().getString(SharedKeys.tokenKey) != null
                               ? SharedPref().getString(SharedKeys.userRole) ==
                                       'admin'
-                                  ? AppRoutes.adminHomescreen
-                                  : AppRoutes.customerHomescreen
+                                  ? AppRoutes.customerHomescreen
+                                  : AppRoutes.adminHomescreen
                               : AppRoutes.splasScreen,
                       locale: Locale(cubit.currentLanguage),
                       supportedLocales: AppLocalizationsSetup.supportedLocales,
