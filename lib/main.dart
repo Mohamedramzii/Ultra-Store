@@ -3,8 +3,10 @@ import 'dart:io';
 
 // Package imports:
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -38,9 +40,13 @@ void main() async {
           messagingSenderId: '213592688170',
           projectId: 'ultra-store-86c05',
         ),
+      ).then(
+        (value) => FirebaseAppCheck.instance
+            // Your personal reCaptcha public key goes here:
+            .activate(),
       )
     else
-      Firebase.initializeApp().then((value) => null),
+      Firebase.initializeApp(),
 
     // Shared Preferences
     SharedPref().init(),

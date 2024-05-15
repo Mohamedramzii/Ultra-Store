@@ -18,14 +18,13 @@ class SignUpButton extends StatelessWidget {
         if (state is UserRegisterSuccessState) {
           ShowToast.showToastSuccessBOTTOM(
               message: context.translate(LangKeys.registeredsuccessfully),
-              toastForsuccess: true);
+              toastForsuccess: true,);
           Navigator.of(context)
-              .pushReplacementNamed(AppRoutes.customerHomescreen);
+              .pushReplacementNamed(AppRoutes.loginscreen);
         }
       },
       builder: (context, state) {
-        if (state is UserRegisterLoadingState &&
-            context.read<AppCubit>().image != null) {
+        if (state is UserRegisterLoadingState || state is UserImageUploadedLoadingState) {
           return CustomLinearButton(
             onPressed: () {},
             width: double.infinity,
@@ -38,7 +37,8 @@ class SignUpButton extends StatelessWidget {
         } else {
           return CustomLinearButton(
             onPressed: () {
-              if (context.read<AuthCubit>().formKey.currentState!.validate()) {
+              if (context.read<AuthCubit>().formKey.currentState!.validate() &&
+                  context.read<AuthCubit>().image != null) {
                 BlocProvider.of<AuthCubit>(context).register(
                     email:
                         context.read<AuthCubit>().emailcontroller.text.trim(),
@@ -52,7 +52,7 @@ class SignUpButton extends StatelessWidget {
                         .fullnamecontroller
                         .text
                         .trim(),
-                    context: context);
+                    context: context,);
               }
             },
             width: double.infinity,

@@ -68,10 +68,11 @@ class AppCubit extends Cubit<AppCubitState> {
           await ImagePicker().pickImage(source: ImageSource.gallery);
 
       if (pickedImage != null) {
-        return File(pickedImage.path);
+        // ignore: join_return_with_assignment
+        image = File(pickedImage.path);
+        emit(ImageChangedsuccessfully());
+        return image;
       }
-
-      emit(ImageChangedsuccessfully());
     } catch (e) {
       final permissionStatus = await Permission.photos.status;
       if (permissionStatus == PermissionStatus.denied) {
@@ -80,42 +81,33 @@ class AppCubit extends Cubit<AppCubitState> {
         log('Image Picker Exception ==> $e');
       }
     }
-    // return null;
   }
 
-  String? imageURL = '';
 
-  uploadImage() async {
+  String? imageURL;
+
+  // returns a url
+  Future<String?> uploadImage() async {
     image = await pickImage();
 
     emit(ImageUploadedLoadingState());
 
     try {
-      await firebase_storage.FirebaseStorage.instanceFor(
+      final uploadedFile = await firebase_storage.FirebaseStorage.instanceFor(
         bucket: 'gs://ultra-store-86c05.appspot.com',
       )
           .ref()
           .child(
             'users/${Uri.file(image!.path).pathSegments.last}',
           )
-          .putFile(image!)
-          .then(
-            (value) => value.ref.getDownloadURL().then((value) {
-              imageURL = value;
-              usersCollection
-                  .doc()
-                  .set({'image': value});
-              log('Download Link ==> $value');
-            }),
-          );
+          .putFile(image!);
 
+      imageURL = await uploadedFile.ref.getDownloadURL();
       emit(ImageUploadedSuccessfully());
     } on Exception catch (e) {
       emit(ImageUploadedFailureState());
     }
-
   }
-
 
   Future<void> _showAlertPermissionDialog() {
     return showCupertinoDialog(
