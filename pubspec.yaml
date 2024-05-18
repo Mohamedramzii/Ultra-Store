@@ -138,13 +138,13 @@ flutter:
   # Arabic Font
     - family: Cairo
       fonts:
-        - asset: assets/fonts/arabic/cairo/Cairo-Regular.ttf
+        - asset: assets\fonts\arabic\cairo\Cairo-Regular.ttf
           weight: 700
 
-        - asset: assets/fonts/arabic/cairo/Cairo-Medium.ttf
+        - asset: assets\fonts\arabic\cairo\Cairo-Medium.ttf
           weight: 500
 
-        - asset: assets/fonts/arabic/cairo/Cairo-Regular.ttf
+        - asset: assets\fonts\arabic\cairo\Cairo-Regular.ttf
           weight: 400
 
     # English Font
