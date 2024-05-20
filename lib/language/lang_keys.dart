@@ -35,4 +35,7 @@ class LangKeys {
   static const String noInternet = 'noInternet';
   static const String addPhoto = 'addphoto';
   static const String registeredsuccessfully = 'registeredsuccessfully';
+  static const String products = 'products';
+  static const String categories = 'categories';
+  static const String users = 'users';
 }

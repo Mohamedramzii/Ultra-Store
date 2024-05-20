@@ -71,6 +71,8 @@ dependencies:
   firebase_app_check: ^0.2.1+17
   flutter_zoom_drawer: ^3.2.0
   hidden_drawer_menu: ^3.0.1
+  gap: ^3.0.1
+  shimmer: ^3.0.0
   
 
   #model
@@ -127,6 +129,7 @@ flutter:
     - .env.dev
     - .env.production
     - assets/images/
+    - assets/icons/
     - assets/images/customer/
     - assets/images/admin/
     - lang/en.json

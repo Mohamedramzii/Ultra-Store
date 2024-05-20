@@ -3,6 +3,7 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:full_ecommerce_app/core/extensions/context_extensions.dart';
 import 'package:full_ecommerce_app/core/style/colors/dark_colors.dart';
 import 'package:full_ecommerce_app/core/style/colors/light_colors.dart';
+import 'package:full_ecommerce_app/features/admin/presentation/refactors/dashboard_body.dart';
 
 class AdminDashboardScreen extends StatelessWidget {
   const AdminDashboardScreen({super.key});
@@ -28,12 +29,7 @@ class AdminDashboardScreen extends StatelessWidget {
           style: Theme.of(context).textTheme.displayMedium,
         ),
       ),
-      body: Center(
-        child: Text(
-          'Admin Dashboard Screen',
-          style: Theme.of(context).textTheme.displayMedium,
-        ),
-      ),
+      body: const DashboardBody(),
     );
   }
 }
