@@ -83,7 +83,6 @@ class AppCubit extends Cubit<AppCubitState> {
     }
   }
 
-
   String? imageURL;
 
   // returns a url

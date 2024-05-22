@@ -7,7 +7,6 @@ import 'package:full_ecommerce_app/core/style/colors/dark_colors.dart';
 import 'package:full_ecommerce_app/features/admin/presentation/screens/dashboard_screen.dart';
 import 'package:full_ecommerce_app/features/admin/presentation/widgets/drawer_list.dart';
 
-
 class AdminHomeScreen extends StatefulWidget {
   const AdminHomeScreen({super.key});
 
@@ -72,5 +71,3 @@ class MenuScreen extends StatelessWidget {
     );
   }
 }
-
-

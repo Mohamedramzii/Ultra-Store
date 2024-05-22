@@ -10,9 +10,11 @@ class AdminCategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AdminAppBar(isMain: true, backgroundColor: context.isDarkMode
-            ? DarkColors.mainColor
-            : LightColors.mainColor, title: 'Categories'),
+      appBar: AdminAppBar(
+          isMain: true,
+          backgroundColor:
+              context.isDarkMode ? DarkColors.mainColor : LightColors.mainColor,
+          title: 'Categories'),
       body: Center(
         child: Text(
           'Admin Categories Screen',

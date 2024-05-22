@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:full_ecommerce_app/core/extensions/context_extensions.dart';
 import 'package:full_ecommerce_app/core/style/colors/dark_colors.dart';
 import 'package:full_ecommerce_app/core/style/colors/light_colors.dart';
+import 'package:full_ecommerce_app/features/admin/presentation/bloc/cubit/admin_cubit.dart';
 import 'package:full_ecommerce_app/features/admin/presentation/refactors/dashboard_body.dart';
 
 class AdminDashboardScreen extends StatelessWidget {
@@ -29,7 +31,13 @@ class AdminDashboardScreen extends StatelessWidget {
           style: Theme.of(context).textTheme.displayMedium,
         ),
       ),
-      body: const DashboardBody(),
+      body: BlocProvider(
+        create: (context) => AdminCubit()
+          ..getAllProducts()
+          ..getAllCategories()
+          ..getAllUsers(),
+        child: const DashboardBody(),
+      ),
     );
   }
 }

@@ -6,7 +6,6 @@ class ShowToast {
   const ShowToast._();
 
   static void showToastSuccessBOTTOM({
-  
     required String message,
     required bool toastForsuccess,
     int? seconds,

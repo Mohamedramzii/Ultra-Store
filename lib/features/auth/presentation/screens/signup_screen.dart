@@ -36,11 +36,12 @@ class signUpScreen extends StatelessWidget {
           ),
         ),
       ),
-      body:  SafeArea(
-          child: BlocProvider(
-        create: (context) => AuthCubit(),
-        child: const SignupBody(),
-      ),),
+      body: SafeArea(
+        child: BlocProvider(
+          create: (context) => AuthCubit(),
+          child: const SignupBody(),
+        ),
+      ),
     );
   }
 }
