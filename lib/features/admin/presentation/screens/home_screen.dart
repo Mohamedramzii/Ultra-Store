@@ -37,6 +37,9 @@ class _HomeScreenState extends State<AdminHomeScreen> {
         controller: _controller,
         borderRadius: 25.r,
         showShadow: true,
+        shadowLayer1Color: context.isDarkMode
+            ? Colors.white.withOpacity(0.3)
+            : Colors.black.withOpacity(0.3),
         angle: 5,
         menuBackgroundColor:
             context.isDarkMode ? DarkColors.bluePinkDark : Colors.white38,

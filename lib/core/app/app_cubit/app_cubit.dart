@@ -1,12 +1,10 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:full_ecommerce_app/core/constants/app_constants.dart';
 import 'package:full_ecommerce_app/core/di/injection_container.dart';
 import 'package:full_ecommerce_app/core/services/local/shared_keys.dart';
 import 'package:full_ecommerce_app/core/services/local/shared_pref.dart';

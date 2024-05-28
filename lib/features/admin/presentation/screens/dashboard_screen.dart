@@ -12,31 +12,31 @@ class AdminDashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor:
-            context.isDarkMode ? DarkColors.mainColor : LightColors.mainColor,
-        leading: IconButton(
-          onPressed: () => ZoomDrawer.of(context)!.toggle(),
-          icon: Icon(
-            Icons.menu,
-            color: context.isDarkMode
-                ? LightColors.mainColor
-                : DarkColors.mainColor,
+    return BlocProvider(
+      create: (context) => AdminCubit()
+        ..getAllProducts()
+        ..getAllCategories()
+        ..getAllUsers(),
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor:
+              context.isDarkMode ? DarkColors.mainColor : LightColors.mainColor,
+          leading: IconButton(
+            onPressed: () => ZoomDrawer.of(context)!.toggle(),
+            icon: Icon(
+              Icons.menu,
+              color: context.isDarkMode
+                  ? LightColors.mainColor
+                  : DarkColors.mainColor,
+            ),
+          ),
+          title: Text(
+            'Dashboard',
+            style: Theme.of(context).textTheme.displayMedium,
           ),
         ),
-        title: Text(
-          'Dashboard',
-          style: Theme.of(context).textTheme.displayMedium,
-        ),
-      ),
-      body: BlocProvider(
-        create: (context) => AdminCubit()
-          ..getAllProducts()
-          ..getAllCategories()
-          ..getAllUsers(),
-        child: const DashboardBody(),
+        body: const DashboardBody(),
       ),
     );
   }
