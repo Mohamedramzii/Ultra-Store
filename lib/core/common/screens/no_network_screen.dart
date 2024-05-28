@@ -16,8 +16,9 @@ class NoInternetScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:
-          AdaptiveTheme.of(context).mode.isDark ? DarkColors.mainColor : LightColors.mainColor,
+      backgroundColor: AdaptiveTheme.of(context).mode.isDark
+          ? DarkColors.mainColor
+          : LightColors.mainColor,
       body: Padding(
         padding: const EdgeInsets.all(12),
         child: Column(
@@ -26,7 +27,7 @@ class NoInternetScreen extends StatelessWidget {
             Flexible(
               child: LottieBuilder.asset(AppImages.noInternet, repeat: false),
             ),
-             Text(
+            Text(
               'No available connection, please check your connection and try again',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headlineSmall,

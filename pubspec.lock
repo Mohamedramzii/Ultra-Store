@@ -234,21 +234,29 @@ packages:
     source: hosted
     version: "1.18.0"
   connectivity_plus:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: connectivity_plus
-      sha256: ebe15d94de9dd7c31dc2ac54e42780acdf3384b1497c69290c9f3c5b0279fc57
+      sha256: "224a77051d52a11fbad53dd57827594d3bd24f945af28bd70bab376d68d437f0"
       url: "https://pub.dev"
     source: hosted
-    version: "6.0.2"
+    version: "5.0.2"
   connectivity_plus_platform_interface:
     dependency: transitive
     description:
       name: connectivity_plus_platform_interface
-      sha256: b6a56efe1e6675be240de39107281d4034b64ac23438026355b4234042a35adb
+      sha256: cf1d1c28f4416f8c654d7dc3cd638ec586076255d407cef3ddbdaf178272a71a
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.0"
+    version: "1.2.4"
+  connectivity_wrapper:
+    dependency: "direct main"
+    description:
+      name: connectivity_wrapper
+      sha256: "41cf17c525b109f96c11dd20b96a2a0b7f745ed14e6e84dc9cc3ae4202d53358"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.4"
   convert:
     dependency: transitive
     description:
@@ -525,6 +533,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_zoom_drawer:
+    dependency: "direct main"
+    description:
+      name: flutter_zoom_drawer
+      sha256: "5a3708548868463fb36e0e3171761ab7cb513df88d2f14053802812d2e855060"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.0"
   fluttertoast:
     dependency: "direct main"
     description:
@@ -733,6 +749,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  liquid_pull_to_refresh:
+    dependency: "direct main"
+    description:
+      name: liquid_pull_to_refresh
+      sha256: "11e4cd8c5460085a31b479ec4e1cd063eb8e599f35684d57a44dafa1fd1f67f3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.1"
   logging:
     dependency: transitive
     description:
@@ -1037,6 +1061,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
+  shimmer:
+    dependency: "direct main"
+    description:
+      name: shimmer
+      sha256: "5f88c883a22e9f9f299e5ba0e4f7e6054857224976a5d9f839d4ebdc94a14ac9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   sky_engine:
     dependency: transitive
     description: flutter

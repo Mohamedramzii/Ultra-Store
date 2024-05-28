@@ -3,8 +3,8 @@ class LoginResponseModel {
 
   factory LoginResponseModel.fromJson(Map<dynamic, dynamic> json) =>
       LoginResponseModel(
-        accessToken: json['access_token'] ,
-        refreshToken: json['refresh_token'] ,
+        accessToken: json['access_token'],
+        refreshToken: json['refresh_token'],
       );
   dynamic accessToken;
   dynamic refreshToken;
@@ -14,7 +14,3 @@ class LoginResponseModel {
         'refresh_token': refreshToken,
       };
 }
-
-
-
-

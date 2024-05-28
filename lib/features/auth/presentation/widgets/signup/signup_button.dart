@@ -17,14 +17,15 @@ class SignUpButton extends StatelessWidget {
       listener: (context, state) {
         if (state is UserRegisterSuccessState) {
           ShowToast.showToastSuccessBOTTOM(
-              message: context.translate(LangKeys.registeredsuccessfully),
-              toastForsuccess: true,);
-          Navigator.of(context)
-              .pushReplacementNamed(AppRoutes.loginscreen);
+            message: context.translate(LangKeys.registeredsuccessfully),
+            toastForsuccess: true,
+          );
+          Navigator.of(context).pushReplacementNamed(AppRoutes.loginscreen);
         }
       },
       builder: (context, state) {
-        if (state is UserRegisterLoadingState || state is UserImageUploadedLoadingState) {
+        if (state is UserRegisterLoadingState ||
+            state is UserImageUploadedLoadingState) {
           return CustomLinearButton(
             onPressed: () {},
             width: double.infinity,
@@ -40,19 +41,13 @@ class SignUpButton extends StatelessWidget {
               if (context.read<AuthCubit>().formKey.currentState!.validate() &&
                   context.read<AuthCubit>().image != null) {
                 BlocProvider.of<AuthCubit>(context).register(
-                    email:
-                        context.read<AuthCubit>().emailcontroller.text.trim(),
-                    password: context
-                        .read<AuthCubit>()
-                        .passwordcontroller
-                        .text
-                        .trim(),
-                    fullname: context
-                        .read<AuthCubit>()
-                        .fullnamecontroller
-                        .text
-                        .trim(),
-                    context: context,);
+                  email: context.read<AuthCubit>().emailcontroller.text.trim(),
+                  password:
+                      context.read<AuthCubit>().passwordcontroller.text.trim(),
+                  fullname:
+                      context.read<AuthCubit>().fullnamecontroller.text.trim(),
+                  context: context,
+                );
               }
             },
             width: double.infinity,

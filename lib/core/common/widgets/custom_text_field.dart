@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Project imports:

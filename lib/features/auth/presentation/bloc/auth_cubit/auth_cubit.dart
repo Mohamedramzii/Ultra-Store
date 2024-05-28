@@ -1,11 +1,9 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:dio/dio.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:full_ecommerce_app/core/app/app_cubit/app_cubit.dart';
 import 'package:full_ecommerce_app/core/constants/app_constants.dart';
 import 'package:full_ecommerce_app/core/services/local/shared_keys.dart';
 import 'package:full_ecommerce_app/core/services/local/shared_pref.dart';

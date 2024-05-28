@@ -46,7 +46,7 @@ class LoginScreen extends StatelessWidget {
           ),
         ),
       ),
-      body:  SafeArea(
+      body: SafeArea(
         bottom: false,
         child: BlocProvider(
           create: (context) => AuthCubit(),

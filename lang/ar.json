@@ -34,5 +34,8 @@
     "lang_code": "العربية",
     "noInternet":"لا يوجد اتصال متاح، يرجى التحقق من الاتصال والمحاولة مرة أخرى",
     "addphoto":"برجاء اضافة صورة لك",
-    "registeredsuccessfully":"تم انشاء الحساب بنجاح"
+    "registeredsuccessfully":"تم انشاء الحساب بنجاح",
+    "products":"المنتجات",
+    "categories":"الفئات",
+    "users":"المستخدمين"
 }

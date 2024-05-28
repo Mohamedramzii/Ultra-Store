@@ -25,12 +25,14 @@ class LoginButton extends StatelessWidget {
       listener: (context, state) {
         if (state is UserLoginSuccessState) {
           return ShowToast.showToastSuccessBOTTOM(
-              message: context.translate(LangKeys.loggedSuccessfully),
-              toastForsuccess: true,);
+            message: context.translate(LangKeys.loggedSuccessfully),
+            toastForsuccess: true,
+          );
         } else if (state is UserLoginFailureState) {
           return ShowToast.showToastSuccessBOTTOM(
-              message: context.translate(LangKeys.loggedError),
-              toastForsuccess: false,);
+            message: context.translate(LangKeys.loggedError),
+            toastForsuccess: false,
+          );
         }
         if (state is GetUserInformationSuccessState) {
           if (state.userRole == 'admin') {

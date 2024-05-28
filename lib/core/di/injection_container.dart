@@ -11,6 +11,7 @@ Future<void> initDI() async {
 Future<void> _initDependencies() async {
   final navigatorKey = GlobalKey<NavigatorState>();
 
-  getIt..registerFactory(AppCubit.new)
-  ..registerSingleton<GlobalKey<NavigatorState>>(navigatorKey);
+  getIt
+    ..registerFactory(AppCubit.new)
+    ..registerSingleton<GlobalKey<NavigatorState>>(navigatorKey);
 }

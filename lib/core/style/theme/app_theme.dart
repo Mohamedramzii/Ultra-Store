@@ -15,6 +15,7 @@ import 'package:full_ecommerce_app/core/style/fonts/app_font_weights.dart';
 ThemeData darkTheme() {
   return ThemeData(
     useMaterial3: true,
+    brightness: Brightness.light,
     scaffoldBackgroundColor: DarkColors.mainColor,
     // extensions: const <ThemeExtension<dynamic>>[AppColors.darkColors],
     textTheme: TextTheme(
@@ -48,6 +49,7 @@ ThemeData darkTheme() {
 ThemeData lightTheme() {
   return ThemeData(
     useMaterial3: true,
+    brightness: Brightness.dark,
     scaffoldBackgroundColor: LightColors.mainColor,
     //  extensions: const <ThemeExtension<dynamic>>[AppColors.lightColors],
     textTheme: TextTheme(

@@ -42,53 +42,53 @@ class _LoginTextFormFieldWidgetState extends State<LoginTextFormFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: _cubit.formKey,
+        key: _cubit.formKey,
         child: CustomFadeInAnimation(
-      child: Column(
-        children: [
-          //! Email address
-          CustomTextField(
-            controller: _cubit.emailcontroller,
-            hintText: context.translate(LangKeys.email),
-            keyboardType: TextInputType.emailAddress,
-            validator: (value) {
-              if (!AppRegex.isEmailValid(value!)) {
-                return context.translate(LangKeys.validEmail);
-              } else {
-                return null;
-              }
-            },
-          ),
-          SizedBox(height: 20.h),
-
-          //! password
-          CustomTextField(
-            controller: _cubit.passwordcontroller,
-            hintText: context.translate(LangKeys.password),
-            keyboardType: TextInputType.visiblePassword,
-            obscureText: isVisible,
-            suffixIcon: IconButton(
-              onPressed: () {
-                setState(() {
-                  isVisible = !isVisible;
-                });
-              },
-              icon: Icon(
-                isVisible ? Icons.visibility_off : Icons.visibility,
-                color: context.isLightMode
-                    ? LightColors.textColor
-                    : DarkColors.textColor,
+          child: Column(
+            children: [
+              //! Email address
+              CustomTextField(
+                controller: _cubit.emailcontroller,
+                hintText: context.translate(LangKeys.email),
+                keyboardType: TextInputType.emailAddress,
+                validator: (value) {
+                  if (!AppRegex.isEmailValid(value!)) {
+                    return context.translate(LangKeys.validEmail);
+                  } else {
+                    return null;
+                  }
+                },
               ),
-            ),
-            validator: (value) {
-              if (value!.length < 6 || value.isEmpty) {
-                return context.translate(LangKeys.validPasswrod);
-              }
-              return null;
-            },
+              SizedBox(height: 20.h),
+
+              //! password
+              CustomTextField(
+                controller: _cubit.passwordcontroller,
+                hintText: context.translate(LangKeys.password),
+                keyboardType: TextInputType.visiblePassword,
+                obscureText: isVisible,
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      isVisible = !isVisible;
+                    });
+                  },
+                  icon: Icon(
+                    isVisible ? Icons.visibility_off : Icons.visibility,
+                    color: context.isLightMode
+                        ? LightColors.textColor
+                        : DarkColors.textColor,
+                  ),
+                ),
+                validator: (value) {
+                  if (value!.length < 6 || value.isEmpty) {
+                    return context.translate(LangKeys.validPasswrod);
+                  }
+                  return null;
+                },
+              ),
+            ],
           ),
-        ],
-      ),
-    ));
+        ));
   }
 }
