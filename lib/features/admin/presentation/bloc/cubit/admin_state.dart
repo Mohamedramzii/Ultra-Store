@@ -19,10 +19,16 @@ final class AdminGetAllCategoriesLoadingState extends AdminState {}
 
 final class AdminGetAllCategoriesFailureState extends AdminState {}
 
-
 //! Get Users States
 final class AdminGetAllUsersSuccessState extends AdminState {}
 
 final class AdminGetAllUsersLoadingState extends AdminState {}
 
 final class AdminGetAllUsersFailureState extends AdminState {}
+
+//! Create Category photo
+final class AdminCreateCategorySuccessState extends AdminState {}
+
+final class AdminCreateCategoryLoadingState extends AdminState {}
+
+final class AdminCreateCategoryFailureState extends AdminState {}

@@ -16,23 +16,24 @@ part 'admin_state.dart';
 class AdminCubit extends Cubit<AdminState> {
   AdminCubit() : super(AdminInitial());
 
-  List<dynamic> products = [];
+  TextEditingController categoryName = TextEditingController();
+  final formKey = GlobalKey<FormState>();
+
+  List<GetProductsModel> products = [];
   // List<dynamic> newproducts = [];
   Future<void> getAllProducts() async {
     emit(AdminGetAllProductsLoadingState());
 
     try {
-      
-        final response = await DioHelper.getData(url: getallproducts);
-        if (response.statusCode == 200) {
-          products = response.data as List<dynamic>;
-          products
-              .map((e) => GetProductsModel.fromJson(e as Map<String, dynamic>))
-              .toList();
-          // products = newproducts;
-          emit(AdminGetAllProductsSuccessState());
-        }
-      
+      final response = await DioHelper.getData(url: getallproducts);
+      if (response.statusCode == 200) {
+        products = (response.data as List)
+            .map((e) => GetProductsModel.fromJson(e as Map<String, dynamic>))
+            .toList();
+
+        // products = newproducts;
+        emit(AdminGetAllProductsSuccessState());
+      }
     } on DioError catch (e) {
       log('Products Failed $e');
       emit(AdminGetAllProductsFailureState());
@@ -49,19 +50,20 @@ class AdminCubit extends Cubit<AdminState> {
     }
   }
 
-  List<dynamic> categories = [];
+  List<GetAllCategoriesModel> categories = [];
   Future<void> getAllCategories() async {
+    categories = [];
     emit(AdminGetAllCategoriesLoadingState());
 
     try {
       final response = await DioHelper.getData(url: getallcategories);
       if (response.statusCode == 200) {
-        categories = response.data as List<dynamic>;
-        categories
+        categories = (response.data as List)
             .map(
               (e) => GetAllCategoriesModel.fromJson(e as Map<String, dynamic>),
             )
             .toList();
+
         emit(AdminGetAllCategoriesSuccessState());
       } else {
         emit(AdminGetAllCategoriesFailureState());
@@ -82,7 +84,7 @@ class AdminCubit extends Cubit<AdminState> {
     }
   }
 
-  List<dynamic> users = [];
+  List<GetAllUsers> users = [];
 
   Future<void> getAllUsers() async {
     emit(AdminGetAllUsersLoadingState());
@@ -91,11 +93,10 @@ class AdminCubit extends Cubit<AdminState> {
       final response = await DioHelper.getData(url: getallusers);
 
       if (response.statusCode == 200) {
-        users = response.data as List<dynamic>;
-
-        users
+        users = (response.data as List)
             .map((e) => GetAllUsers.fromJson(e as Map<String, dynamic>))
             .toList();
+
         emit(AdminGetAllUsersSuccessState());
       } else {
         emit(AdminGetAllUsersFailureState());
@@ -113,6 +114,25 @@ class AdminCubit extends Cubit<AdminState> {
         // Handle other errors
         log('Other error: ${e.message}');
       }
+    }
+  }
+
+  createNewCategory({
+    required String categoryName,
+  }) async {
+    emit(AdminCreateCategoryLoadingState());
+
+    try {
+      await DioHelper.postData(
+        url: createnewcategory,
+        data: {
+          'image': 'https://api.escuelajs.co/api/v1/categories/',
+          'name': categoryName
+        },
+      ).then((value) => getAllCategories());
+      emit(AdminCreateCategorySuccessState());
+    } catch (e) {
+      emit(AdminCreateCategoryFailureState());
     }
   }
 }

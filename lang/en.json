@@ -37,5 +37,14 @@
     "addphoto":"Please add a photo of you",
     "products":"Products",
     "categories":"Categories",
-    "users":"Users"
+    "users":"Users",
+    "addcategory":"Add a category ?",
+    "addcategoryPhoto": "Add a photo",
+    "addcategoryName": "Enter a name for the category",
+    "createcategory":"Create a new category",
+    "updatecategory":"Update a category",
+    "updatecategoryPhoto":"Update Category Photo",
+    "updatecategoryName":"Update Category Name"
+
+    
 }

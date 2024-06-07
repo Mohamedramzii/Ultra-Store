@@ -70,6 +70,24 @@ class DioHelper {
       data: data,
     );
   }
+  static Future<Response> postImage({
+    required String url,
+    Map<String, dynamic>? query,
+    required Map<String, dynamic> data,
+    // String? lang = 'en',
+    String? token,
+  }) async {
+    dio.options.headers = {
+      'Content-Type': 'multipart/form-data',
+      // 'lang': lang,
+      'Authorization': token,
+    };
+    return await dio.post(
+      url,
+      queryParameters: query,
+      data: data,
+    );
+  }
 
   static Future<Response> putData({
     required String url,

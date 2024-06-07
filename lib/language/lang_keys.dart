@@ -38,4 +38,12 @@ class LangKeys {
   static const String products = 'products';
   static const String categories = 'categories';
   static const String users = 'users';
+  static const String createcategory = 'createcategory';
+  static const String addcategory = 'addcategory';
+  static const String addcategoryPhoto = 'addcategoryPhoto';
+  static const String addcategoryName = 'addcategoryName';
+  static const String editcategory = 'editcategory';
+  static const String updatecategory = 'updatecategory';
+  static const String updatecategoryPhoto = 'updatecategoryPhoto';
+  static const String updatecategoryName = 'updatecategoryName';
 }

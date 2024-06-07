@@ -60,14 +60,15 @@ class AppCubit extends Cubit<AppCubitState> {
   //! Image Picker method
 
   File? image;
+  XFile? pickedImage;
   Future<File?> pickImage() async {
     try {
-      final pickedImage =
+     pickedImage =
           await ImagePicker().pickImage(source: ImageSource.gallery);
 
       if (pickedImage != null) {
         // ignore: join_return_with_assignment
-        image = File(pickedImage.path);
+        image = File(pickedImage!.path);
         emit(ImageChangedsuccessfully());
         return image;
       }

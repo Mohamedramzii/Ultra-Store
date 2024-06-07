@@ -85,6 +85,7 @@ dependencies:
   # --Drawer
   flutter_zoom_drawer: ^3.2.0
   liquid_pull_to_refresh: ^3.0.1
+  cached_network_image: ^3.3.1
   # hidden_drawer_menu: ^3.0.1
 
   
